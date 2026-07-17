@@ -91,14 +91,14 @@ Act as our principal QA Automation Engineer...
 
 The Agent Skills specification requires only `name` and `description`. The remaining fields are optional and should be added only when they provide useful context.
 
-| Field           | Required | Notes                                                                                                                                                                                                 |
-| --------------- | -------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `name`          | Yes      | 1–64 characters; forms the slash command (e.g., `/ugrc-your-skill-name`). Must match the parent folder name and start with `ugrc-`.                                                                   |
-| `description`   | Yes      | 1–1024 characters; describe what the skill does **and** when to use it. Include keywords so the agent can match prompts automatically. _Our PR gate rejects descriptions shorter than 50 characters._ |
-| `license`       | No       | License name or reference to a bundled license file.                                                                                                                                                  |
-| `compatibility` | No       | Max 500 characters; note required tools, products, or environment constraints.                                                                                                                        |
-| `metadata`      | No       | Key-value map for custom properties (e.g., `author`, `version`).                                                                                                                                      |
-| `allowed-tools` | No       | Experimental; space-separated list of pre-approved tools.                                                                                                                                             |
+| Field           | Required | Notes                                                                                                                                  |
+| --------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `name`          | Yes      | 1–64 characters; forms the slash command (e.g., `/ugrc-your-skill-name`). Must match the parent folder name and start with `ugrc-`.    |
+| `description`   | Yes      | 1–1024 characters; describe what the skill does **and** when to use it. Include keywords so the agent can match prompts automatically. |
+| `license`       | No       | License name or reference to a bundled license file.                                                                                   |
+| `compatibility` | No       | Max 500 characters; note required tools, products, or environment constraints.                                                         |
+| `metadata`      | No       | Key-value map for custom properties (e.g., `author`, `version`).                                                                       |
+| `allowed-tools` | No       | Experimental; space-separated list of pre-approved tools.                                                                              |
 
 > [!NOTE]
 > Follow the best practices found on the [Agent Skills website](https://agentskills.io/skill-creation/best-practices).
