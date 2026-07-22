@@ -1,0 +1,21 @@
+{
+  "name": "agent-skills",
+  "version": "1.0.0",
+  "description": "A central repository for UGRC agent skills.",
+  "homepage": "https://github.com/agrc/agent-skills#readme",
+  "bugs": {
+    "url": "https://github.com/agrc/agent-skills/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agrc/agent-skills.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "skills-ref": "^0.1.5"
+  }
+}
