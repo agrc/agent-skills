@@ -3,6 +3,7 @@
     "agentskills",
     "agrc",
     "arcpy",
+    "codemod",
     "frontmatter",
     "geoprocessing",
     "pathlib",

@@ -5,7 +5,7 @@ description: Upgrades a project to PNPM 11 and enforces UGRC NPM best practices.
 
 You can assume that PNPM v11 is already installed globally on the system.
 
-Make sure that the project is upgraded to PNPM v11 by running the following command: `pnpx codemod run pnpm-v10-to-v11`
+Make sure that the project is upgraded to PNPM v11 by running the following command: `pnpm dlx codemod run pnpm-v10-to-v11`
 
 Make sure this project follows our NPM best practices document.
 
