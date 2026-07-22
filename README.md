@@ -110,7 +110,7 @@ The Agent Skills specification requires only `name` and `description`. The remai
 Validate your skill locally with the official reference validator before opening a PR:
 
 ```bash
-npx skills-ref validate ./skills/ugrc-your-skill-name
+pnpm dlx skills-ref validate ./skills/ugrc-your-skill-name
 ```
 
 ---
