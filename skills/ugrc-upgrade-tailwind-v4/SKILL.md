@@ -7,7 +7,7 @@ description: Use this to upgrade to Tailwind CSS v4
 
 1. Verify the project currently uses Tailwind CSS. If not, stop and inform the user that this rule only applies to existing Tailwind projects.
 2. Check the current Tailwind CSS version. If the project is on v2 or earlier, stop and inform the user that they must first upgrade to v3 before proceeding to v4.
-3. Upgrade to Tailwind CSS v4 by fetching and following the official migration guide: #fetch https://tailwindcss.com/docs/upgrade-guide. Make sure that you are using the vite plugin and not the postcss plugin.
+3. Upgrade to Tailwind CSS v4 by fetching and following the official migration guide: #fetch https://tailwindcss.com/docs/upgrade-guide Make sure that you are using the Vite plugin and not the PostCSS plugin.
 4. Make sure that the `@ugrc/tailwind-preset` and `@ugrc/utah-design-system` packages are also upgraded to the latest versions.
 5. After completing the migration, run the project build and fix any compilation errors related to Tailwind.
 
