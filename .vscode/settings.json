@@ -7,6 +7,9 @@
     "frontmatter",
     "geoprocessing",
     "pathlib",
-    "UGRC"
+    "UGRC",
+    "utahdts",
+    "utds",
+    "Vite"
   ]
 }
