@@ -8,3 +8,12 @@ Prefer the `pathlib` library over the older `os.path` module for handling filesy
 ```python
 arcpy.env.returnPathlib = True
 ```
+
+## Linting and Formatting
+
+Use `ruff` for linting and formatting with the following configuration:
+
+```toml
+[tool.ruff.lint]
+extend-select = ["I"]
+```
