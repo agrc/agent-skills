@@ -8,6 +8,8 @@
     "frontmatter",
     "geoprocessing",
     "pathlib",
+    "pyproject",
+    "setuptools",
     "UGRC",
     "utahdts",
     "utds",
