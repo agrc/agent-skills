@@ -34,11 +34,7 @@ Requirements:
 - Icon HTML: `<span class="utds-icon-before-waffle" aria-hidden="true" />`
 
 9. Keep `SocialMedia` unchanged and in its current location if it exists. It is explicitly out of scope.
-10. Preserve the existing branding by providing logo via official header `logo` setting using a separate SVG file, not a large inline string.
-
-- Store logo as `public/logo.svg`
-- Set `logo.imageUrl = '/logo.svg'`
-
+10. Preserve the existing branding and logo via official header `logo` setting if possible. Prefer using a separate file in the `public` directory rather than embedding a large inline SVG.
 11. Replace old UGRC `Header` and `Footer` component usage with the new official chrome adapter.
 
 Possible layout fixes. If the existing app is a full-screen map, the new header/footer may push the map content and cause overflow/scroll issues. Ensure the following layout requirements are met:
