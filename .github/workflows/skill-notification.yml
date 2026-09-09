@@ -1,0 +1,64 @@
+name: Notify Skill Updates
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - skills/**
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    name: Notify Google Chat
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up code
+        uses: actions/checkout@v7
+        with:
+          # Full history is needed to compare the push's before and after SHAs.
+          fetch-depth: 0
+
+      - name: Send update notification
+        env:
+          GOOGLE_CHAT_WEBHOOK: ${{ secrets.GOOGLE_CHAT_WEBHOOK }}
+          BEFORE_SHA: ${{ github.event.before }}
+          AFTER_SHA: ${{ github.sha }}
+          REPOSITORY_URL: ${{ github.event.repository.html_url }}
+        run: |
+          set -euo pipefail
+
+          if [[ -z "${GOOGLE_CHAT_WEBHOOK}" ]]; then
+            echo "GOOGLE_CHAT_WEBHOOK is not configured" >&2
+            exit 1
+          fi
+
+          if [[ "${BEFORE_SHA}" =~ ^0+$ ]]; then
+            changed_files=$(git diff-tree --no-commit-id --name-only -r "${AFTER_SHA}")
+          else
+            changed_files=$(git diff --name-only "${BEFORE_SHA}" "${AFTER_SHA}")
+          fi
+
+          changed_skills=$(printf '%s\n' "${changed_files}" \
+            | awk -F/ '$1 == "skills" && NF >= 2 { print $2 }' \
+            | sort -u)
+
+          if [[ -z "${changed_skills}" ]]; then
+            echo "No skill directories changed; skipping notification"
+            exit 0
+          fi
+
+          skill_list=$(printf '%s\n' "${changed_skills}" | sed 's/^/- /')
+          message=$(printf 'Agent skills updated in %s:\n%s\n\nRun `pnpm dlx skills update` to pull the latest versions.' \
+            "${REPOSITORY_URL}" "${skill_list}")
+          payload=$(jq -n --arg text "${message}" '{text: $text}')
+
+          curl --fail-with-body --silent --show-error \
+            --retry 3 \
+            --retry-delay 2 \
+            --request POST \
+            --header 'Content-Type: application/json; charset=UTF-8' \
+            --data "${payload}" \
+            "${GOOGLE_CHAT_WEBHOOK}"
