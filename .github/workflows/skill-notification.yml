@@ -36,7 +36,7 @@ jobs:
           fi
 
           if [[ "${BEFORE_SHA}" =~ ^0+$ ]]; then
-            changed_files=$(git diff-tree --no-commit-id --name-only -r "${AFTER_SHA}")
+            changed_files=$(git diff-tree --root --no-commit-id --name-only -r "${AFTER_SHA}")
           else
             changed_files=$(git diff --name-only "${BEFORE_SHA}" "${AFTER_SHA}")
           fi
