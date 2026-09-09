@@ -113,6 +113,17 @@ Validate your skill locally with the official reference validator before opening
 pnpm dlx skills-ref validate ./skills/ugrc-your-skill-name
 ```
 
+## Repository Setup & Administration
+
+The `Notify Skill Updates` GitHub Action posts to Google Chat when changes to
+`skills/` land on `main`. To configure it:
+
+1. [Create an incoming webhook for the Google Chat space](https://developers.google.com/workspace/chat/configure-webhooks).
+2. Add the webhook URL as the repository Actions secret `GOOGLE_CHAT_WEBHOOK`.
+
+The notification lists the changed skills and directs users to run
+`pnpm dlx skills update`.
+
 ---
 
 ## Strategic Future Outlook: GitHub Enterprise

@@ -8,6 +8,7 @@
     "frontmatter",
     "geoprocessing",
     "pathlib",
+    "pipefail",
     "pyproject",
     "setuptools",
     "UGRC",
