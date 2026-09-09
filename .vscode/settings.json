@@ -11,8 +11,12 @@
     "pyproject",
     "setuptools",
     "UGRC",
+    "uocc",
     "utahdts",
     "utds",
     "Vite"
-  ]
+  ],
+  "chat.tools.terminal.autoApprove": {
+    "./scripts/validate-skills.sh": true
+  }
 }
