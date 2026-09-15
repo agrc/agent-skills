@@ -1,11 +1,14 @@
 ---
 name: ugrc-pnpm-standards
-description: Upgrades a project to PNPM 11 and enforces UGRC NPM best practices. Use when migrating from PNPM 10, refreshing pnpm-lock.yaml, removing .npmrc, pinning pnpm@11 in GitHub Actions, or upgrading agrc/firebase-website-deploy-composite-action to v2.
+description: Upgrades a project to PNPM 12 and enforces UGRC NPM best practices. Use when migrating from PNPM 10, refreshing pnpm-lock.yaml, removing .npmrc, pinning pnpm@12 in GitHub Actions, or upgrading agrc/firebase-website-deploy-composite-action to v2.
 ---
 
-You can assume that PNPM v11 is already installed globally on the system.
+You can assume that PNPM v12 is already installed globally on the system.
 
-Make sure that the project is upgraded to PNPM v11 by running the following command: `pnpm dlx codemod run pnpm-v10-to-v11`
+Make sure that the project is upgraded to PNPM v12 by running the following commands:
+
+* `pnpm dlx codemod run pnpm-v10-to-v11` (if the project is currently at v10)
+* `pnpm dlx codemod run pnpm-v11-to-v12`
 
 Make sure this project follows our NPM best practices document.
 
@@ -14,9 +17,9 @@ curl -L 'https://docs.google.com/document/d/1imxpULirpXjarj2JVPqh1O1i3T4x5VSLzQZ
 
 If the webpage fetch tool fails or only returns a redirect, do not retry the redirected URL. Use the `curl -L` command above and treat that output as the source of truth.
 
-Make sure that we're pointing to PNPM version `11` rather than `latest` in the GitHub Actions workflows.
+Make sure that we're pointing to PNPM version `12` rather than `latest` in the GitHub Actions workflows.
 
-No need to add the `packageManager` field to `package.json` if it's not already there, but if it is there, make sure it says `pnpm@11`.
+No need to add the `packageManager` field to `package.json` if it's not already there, but if it is there, make sure it says `pnpm@12`.
 
 When you're done, run `rm -rf node_modules && rm pnpm-lock.yaml && pnpm i` to make sure that the lockfile is updated and that there are no issues with the new version of PNPM.
 
