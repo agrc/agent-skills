@@ -18,6 +18,8 @@ This repository is the single source of truth for UGRC's custom GitHub Copilot s
 
 ## Installing Team Skills for Skill Users
 
+You may need to install [PNPM](https://pnpm.io/installation) first.
+
 ```bash
 pnpm dlx skills add agrc/agent-skills
 ```
